@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block departments %}
+
+{% endblock %} 
+
+{% block content %}
+  {% if department %}
+    <h1>{{ department.name }}</h1>
+
+    <h2>Doctors in this Department:</h2>
+    {% if doctors %}
+      <div class="doctor-list">
+        {% for doctor in doctors %}
+          <div class="doctor-card">
+            <h2>{{ doctor.name }}</h2>
+            <p><strong>Price:</strong> {{ doctor.pricing_info }}</p>
+            <p><strong>Verified:</strong> {{ doctor.verified|yesno:"Yes,No" }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No doctors found for this department.</p>
+    {% endif %}
+  {% else %}
+    <p>Department details not available.</p>
+  {% endif %}
+{% endblock %}

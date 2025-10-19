@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block departments %}
+<!-- empty block overrides the base block, so nothing is displayed -->
+{% endblock %}
+
+{% block content %}
+<h1>Doctors</h1>
+
+{% if doctors %}
+  <div class="doctor-list">
+    {% for doctor in doctors %}
+      <div class="doctor-card">
+        <h2>{{ doctor.name }}</h2>
+        <p><strong>Specialization:</strong> {{ doctor.specialization.name }}</p>
+        <p><strong>Price:</strong> {{ doctor.price }}</p>
+        <p><strong>Verified:</strong> {{ doctor.verified|yesno:"Yes,No" }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No doctors available.</p>
+{% endif %}
+{% endblock %}

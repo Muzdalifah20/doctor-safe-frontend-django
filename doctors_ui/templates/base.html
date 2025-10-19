@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Safe</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar container">
+        <a href="/" class="nav-log">Doctor Safe</a>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'doctor-list' %}">Doctors</a></li>
+            <li><a href="{% url 'deparment-list' %}"></a>Deparments</li>
+            <li><a href="/contacts">Contacts</a></li>
+        </ul>
+
+        <div class="nav-user-dropdown">
+            <button class="dropbtn" id="userDropdownbtn">User <span></span>▼</button>
+            <div class="dropdown-content" id="userDropdown">
+                <a href="/profile">Profile</a>
+                <a href="/accounts/login">Login</a>
+                <a href="/accounts/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    {% block departments%}
+   
+    <section class="department container">
+        <h1>Departments</h1>
+        <ul class="department-list">
+            {% for department in departments %}
+            <li><a href="{% url 'department-detail' department.id%}">{{department.name}}</a></li>
+            {% empty %}
+            <li>No departments found.</li>
+            {% endfor %}
+        </ul>
+    </section>
+     {% endblock departments%}
+        <section class="content container">
+        {% block content %}
+        <!-- Child templates will insert content here -->
+        {% endblock %}
+    </section>
+    
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
