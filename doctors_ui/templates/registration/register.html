@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block departments%}
+{% endblock %}
+{% block content %}
+<section class="register-container">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <h2>Register</h2>
+    {% if errors %}
+      <div class="error-messages">
+        {% for field, field_errors in errors.items %}
+          {% for error in field_errors %}
+            <p>{{ field }}: {{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endif %}
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Register</button>
+  </form>
+</section>
+{% endblock %}

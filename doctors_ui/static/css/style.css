@@ -234,3 +234,118 @@ body {
     margin-bottom: 30px; 
   }
 }
+
+form {
+  max-width: 350px;
+  margin: 30px auto;
+  background: var(--color-card-background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: var(--ff-sans-serif);
+  color: var(--color-card-headline);
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-rose-800);
+  border: none;
+  border-radius: 6px;
+  color: var(--c-white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--c-stone-900);
+}
+
+form p.error {
+  color: red;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.profile {
+  margin: 40px auto;
+  max-width: 500px;
+  background: var(--color-card-background);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-card-headline);
+  font-family: var(--ff-sans-serif);
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.register-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: var(--color-card-background);
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-family: var(--ff-sans-serif);
+  color: var(--color-card-headline);
+}
+
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-rose-800);
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  color: var(--c-white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: var(--c-stone-900);
+}
+
+.error-messages p {
+  color: #e74c3c;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+}
